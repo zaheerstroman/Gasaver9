@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HomeFragmentGasaver">
+
+    <fragment
+        android:id="@+id/homeMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/edit_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/custom_home_search_edit_text"
+        android:drawableEnd="@drawable/search"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="Suburb / Postcode"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:singleLine="true"
+        android:textColor="@color/gray"
+        android:textColorHint="@color/gray"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/DropdownHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_search"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:gravity="center"
+
+        >
+
+        <com.skydoves.powerspinner.PowerSpinnerView
+            android:id="@+id/spinner_caseText1"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="02dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@drawable/spinner_border_background1"
+            android:dropDownWidth="150dp"
+            android:gravity="center"
+            android:hint="Fuel"
+            android:padding="10dp"
+            android:paddingBottom="@dimen/_300sdp"
+            android:popupBackground="#BEFFFFFF"
+            android:spinnerMode="dropdown"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:drawableTint="@color/primaryColor"
+            app:fontFamily="@font/quicksand_semibold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:spinner_arrow_gravity="end"
+            app:spinner_arrow_padding="8dp"
+            app:spinner_arrow_tint="@color/Purple"
+            app:spinner_divider_color="@drawable/spinner_border_background1"
+            app:spinner_divider_show="true"
+            app:spinner_divider_size="0.4dp"
+
+            app:spinner_item_array="@array/budgets0"
+            app:spinner_item_height="46dp"
+            app:spinner_popup_animation="dropdown"
+            app:spinner_popup_background="@drawable/spinner_border_background1"
+            app:spinner_popup_elevation="14dp"
+            app:spinner_popup_max_height="@dimen/_200sdp"
+            app:tint="@color/primaryColor"
+
+
+            ></com.skydoves.powerspinner.PowerSpinnerView>
+
+        <!--        android:background="@color/blackOpacity50"-->
+        <!--        android:background="@color/white"-->
+        <com.skydoves.powerspinner.PowerSpinnerView
+            android:id="@+id/spinner_subcat"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@drawable/spinner_border_background1"
+            android:dropDownWidth="150dp"
+            android:gravity="center"
+            android:hint="All Fuels"
+            android:padding="10dp"
+            android:paddingRight="05dp"
+            android:paddingBottom="@dimen/_300sdp"
+
+            android:popupBackground="#BEFFFFFF"
+            android:spinnerMode="dropdown"
+
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:drawableTint="@color/primaryColor"
+            app:fontFamily="@font/quicksand_semibold"
+            app:spinner_arrow_gravity="end"
+            app:spinner_arrow_padding="8dp"
+            app:spinner_arrow_tint="@color/Purple"
+            app:spinner_divider_color="@drawable/spinner_border_background1"
+            app:spinner_divider_show="true"
+            app:spinner_divider_size="0.4dp"
+
+            app:spinner_item_array="@array/budgets"
+            app:spinner_item_height="46dp"
+            app:spinner_popup_animation="dropdown"
+            app:spinner_popup_background="@drawable/spinner_border_background1"
+            app:spinner_popup_elevation="14dp"
+            app:spinner_popup_max_height="@dimen/_200sdp"
+            app:tint="@color/primaryColor"
+
+
+            />
+
+<!--        app:layout_anchor="@id/view"-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/transparent_thick"
+            android:backgroundTint="@color/transparent_thick"
+            android:elevation="10dp"
+            android:visibility="gone"
+            app:boxBackgroundColor="@color/transparent_thick"
+            app:boxCornerRadiusBottomEnd="25dp"
+            app:boxCornerRadiusBottomStart="25dp"
+            app:boxCornerRadiusTopEnd="25dp"
+            app:boxCornerRadiusTopStart="25dp"
+            app:boxStrokeColor="@color/transparent_thick"
+
+            app:boxStrokeWidth="0dp"
+            app:endIconMode="clear_text"
+            app:hintEnabled="false"
+
+            app:layout_anchorGravity="start|center">
+
+            <!--                    android:backgroundTint="@color/colorBackground"-->
+
+            <AutoCompleteTextView
+                android:id="@+id/edtPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/Purple"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/primaryColor"
+                android:hint="Search Place"
+                android:inputType="text"
+                android:maxLines="1"
+
+                android:textColorHint="@color/transparent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/placesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/DropdownHolder"
+        android:scrollbars="none">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/placesGroup"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleLine="true"
+            app:singleSelection="true" />
+
+    </HorizontalScrollView>
+
+    <include
+        android:id="@+id/stationLayout"
+        layout="@layout/station_detail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/placesList"
+        android:layout_margin="@dimen/_20sdp"
+        android:layout_toLeftOf="@+id/btnMenu"
+        android:background="#55000000"
+        app:backgroundTint="#55000000" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/placesList"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="3dp"
+        android:background="@color/transparent"
+
+
+        android:backgroundTintMode="@color/primaryColor"
+
+        android:src="@drawable/menu"
+        app:backgroundTint="@color/transparent"
+
+        app:drawableTint="@color/primaryColor"
+        app:fabCustomSize="40dp"
+        app:tint="@color/Purple"
+
+        />
+
+
+    <!--    app:tint="@color/primaryColor"-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnMapType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnMenu"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="3dp"
+        android:background="@color/transparent"
+
+        android:backgroundTintMode="@color/primaryColor"
+
+        android:src="@drawable/ic_map_type"
+        app:backgroundTint="@color/transparent"
+
+        app:drawableTint="@color/primaryColor"
+        app:fabCustomSize="40dp"
+        app:tint="@color/Purple" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/enableTraffic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnMapType"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="3dp"
+        android:background="@color/transparent"
+
+        android:backgroundTintMode="@color/primaryColor"
+
+        android:src="@drawable/ic_traffic"
+        app:backgroundTint="@color/transparent"
+
+        app:drawableTint="@color/primaryColor"
+        app:fabCustomSize="40dp"
+        app:tint="@color/Purple"
+
+        />
+
+    <!--    app:tint="@color/primaryColor"-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/currentLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enableTraffic"
+        android:layout_alignParentEnd="true"
+
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/transparent"
+
+        android:backgroundTintMode="@color/primaryColor"
+        android:src="@drawable/ic_my_location"
+
+        app:backgroundTint="@color/transparent"
+        app:drawableTint="@color/primaryColor"
+        app:fabCustomSize="40dp"
+        app:tint="@color/Purple" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnHybrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/currentLocation"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="3dp"
+        android:background="@color/transparent"
+
+
+        android:backgroundTintMode="@color/primaryColor"
+
+        android:src="@drawable/graph"
+        app:backgroundTint="@color/transparent"
+
+        app:drawableTint="@color/primaryColor"
+        app:fabCustomSize="40dp"
+        app:tint="@color/Purple" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSearchPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnHybrid"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="3dp"
+        android:background="@color/transparent"
+        android:backgroundTintMode="@color/primaryColor"
+
+        android:src="@drawable/searchplus"
+
+        android:visibility="gone"
+        app:backgroundTint="@color/transparent"
+
+        app:drawableTint="@color/primaryColor"
+        app:fabCustomSize="40dp"
+        app:tint="@color/Purple" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnReward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSearchPlus"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="3dp"
+        android:background="@color/transparent"
+
+        android:backgroundTintMode="@color/primaryColor"
+
+        android:src="@drawable/rewards"
+        app:backgroundTint="@color/transparent"
+
+        app:drawableTint="@color/primaryColor"
+        app:fabCustomSize="40dp"
+        app:tint="@color/Purple" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnReward"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="3dp"
+        android:background="@color/transparent"
+
+        android:backgroundTintMode="@color/primaryColor"
+
+        android:src="@drawable/setting_purple"
+        app:backgroundTint="@color/transparent"
+
+        app:drawableTint="@color/primaryColor"
+        app:fabCustomSize="40dp"
+        app:tint="@color/Purple"
+
+        />
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/placesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="26dp"
+                android:backgroundTint="@color/transparent"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+                />
+
+</RelativeLayout>
